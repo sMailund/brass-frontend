@@ -53,8 +53,5 @@ export default {
     TaskCard: TaskCard,
   },
 
-  data: () => ({
-    tasks: ["test"]
-  }),
 };
 </script>
