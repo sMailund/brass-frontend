@@ -7,30 +7,32 @@
           not the final problem
         </h1>
 
-        <p>
-          {{ currentQuestion + 1 }} / {{ correctSolves + 1}}
-        </p>
+        <div class="mt-8 mb-8">
+          <span>{{ currentQuestion + 1 }} / {{ correctSolves + 1 }}</span>
 
-        <p>solved: {{tasks[currentQuestion].solved ? 'yes' : 'no'}}</p>
+          <div class="pb-2">
+            <v-icon size="75" color="red" v-if="!tasks[currentQuestion].solved">mdi-close-thick</v-icon>
+            <v-icon size="75" color="green" v-if="tasks[currentQuestion].solved">mdi-check-bold</v-icon>
+          </div>
 
-        <div class="pb-4">
-          <v-btn
-              :color="currentQuestion !== 0 ? 'blue' : 'white'"
-              v-on:click="previous"
-              class="mr-1"
-          >
-            previous
-          </v-btn>
+          <div class="pb-4">
+            <v-btn
+                :color="currentQuestion !== 0 ? 'blue' : 'white'"
+                v-on:click="previous"
+                class="mr-1"
+            >
+              previous
+            </v-btn>
 
-          <v-btn
-              :color="currentQuestion !== correctSolves ? 'blue' : 'white'"
-              class="ml-1"
-              v-on:click="next"
-          >
-            next
-          </v-btn>
+            <v-btn
+                :color="currentQuestion !== correctSolves ? 'blue' : 'white'"
+                class="ml-1"
+                v-on:click="next"
+            >
+              next
+            </v-btn>
+          </div>
         </div>
-
         <p v-if="tasks[currentQuestion]" class="subheading font-weight-regular">
           {{ tasks[currentQuestion].question }}
         </p>
