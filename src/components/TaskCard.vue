@@ -13,7 +13,23 @@
 
         <p>solved: {{tasks[currentQuestion].solved ? 'yes' : 'no'}}</p>
 
-        <p><span v-on:click="previous">prev</span> <span v-on:click="next">next</span></p>
+        <div class="pb-4">
+          <v-btn
+              :color="currentQuestion !== 0 ? 'blue' : 'white'"
+              v-on:click="previous"
+              class="mr-1"
+          >
+            previous
+          </v-btn>
+
+          <v-btn
+              :color="currentQuestion !== correctSolves ? 'blue' : 'white'"
+              class="ml-1"
+              v-on:click="next"
+          >
+            next
+          </v-btn>
+        </div>
 
         <p v-if="tasks[currentQuestion]" class="subheading font-weight-regular">
           {{ tasks[currentQuestion].question }}
@@ -25,7 +41,7 @@
 
         <v-text-field
                 v-model="answer"
-                label="svar"
+                label="answer"
                 placeholder=""
                 outlined
           ></v-text-field>
@@ -34,7 +50,7 @@
                 :color="answer.length > 0 ? 'blue' : 'white'"
                 v-on:click="submit"
         >
-          send in svar
+          submit answer
         </v-btn>
 
         <p>{{answer}}</p>
