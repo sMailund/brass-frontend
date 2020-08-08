@@ -19,6 +19,10 @@
           {{ tasks[currentQuestion].question }}
         </p>
 
+        <p v-if="tasks[currentQuestion]" class="subheading font-weight-regular">
+          {{ tasks[currentQuestion].hint }}
+        </p>
+
         <v-text-field
                 v-model="answer"
                 label="svar"
