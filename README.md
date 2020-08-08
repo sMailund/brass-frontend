@@ -29,7 +29,7 @@ docker build -t project-brass/frontend .
 ```
 ### run docker image (for verification)
 ```
-docker run -d -p 8080:8080 --rm vue-google-cloud/vue-app
+docker run -d -p 8080:8080 --rm project-brass/frontend 
 ```
 ## deploying to gcp 
 First, store project id as environment var:
