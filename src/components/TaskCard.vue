@@ -4,16 +4,18 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          not the final problem
+          Pappa har bursdag! :)
         </h1>
 
         <div class="mt-8 mb-8">
           <span>{{ currentQuestion + 1 }} / {{ correctSolves + 1 }}</span>
 
+<!--
           <div class="pb-2">
             <v-icon size="75" color="red" v-if="!tasks[currentQuestion].solved">mdi-close-thick</v-icon>
             <v-icon size="75" color="green" v-if="tasks[currentQuestion].solved">mdi-check-bold</v-icon>
           </div>
+-->
 
           <div class="pb-4">
             <v-btn
@@ -41,21 +43,7 @@
           {{ tasks[currentQuestion].hint }}
         </p>
 
-        <v-text-field
-                v-model="answer"
-                label="answer"
-                placeholder=""
-                outlined
-          ></v-text-field>
-
-        <v-btn
-                :color="answer.length > 0 ? 'blue' : 'white'"
-                v-on:click="submit"
-        >
-          submit answer
-        </v-btn>
-
-        <p>{{answer}}</p>
+        <iframe width="560" height="315" :src="urls[currentQuestion]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
       </v-col>
 
@@ -64,17 +52,17 @@
 </template>
 
 <script>
-  import {getTasks, submitTask} from "../dataServices/dataServices";
+  import {submitTask} from "../dataServices/dataServices";
 
 
   export default {
     name: 'HelloWorld',
 
-
     data: () => ({
       answer: "",
       tasks: [],
-      correctSolves: 0,
+      urls: ['https://www.youtube.com/embed/dQw4w9WgXcQ', 'https://www.youtube.com/embed/-e6xOBCAVvA'],
+      correctSolves: 10,
       currentQuestion: 0
     }),
 
@@ -106,6 +94,8 @@
         }
       },
       refreshTasks: function() {
+        this.tasks = 'test';
+/*
         getTasks()
                 .then(response => {
                   this.tasks = response.data
@@ -120,6 +110,7 @@
                   this.correctSolves = solved;
                   console.log(this.correctSolves);
                 });
+*/
       }
     },
 
