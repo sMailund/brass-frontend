@@ -17,13 +17,13 @@
           </div>
 -->
 
-          <div class="pb-4">
+          <div class="pb-4" style="margin-top: 1em">
             <v-btn
                 :color="currentQuestion !== 0 ? 'blue' : 'white'"
                 v-on:click="previous"
                 class="mr-1"
             >
-              previous
+              forrige
             </v-btn>
 
             <v-btn
@@ -31,7 +31,7 @@
                 class="ml-1"
                 v-on:click="next"
             >
-              next
+              neste
             </v-btn>
           </div>
         </div>
@@ -61,8 +61,16 @@
     data: () => ({
       answer: "",
       tasks: [],
-      urls: ['https://www.youtube.com/embed/dQw4w9WgXcQ', 'https://www.youtube.com/embed/QH2-TGUlwu4', 'https://www.youtube.com/embed/feA64wXhbjo'],
-      correctSolves: 10,
+      urls: [
+        'https://www.youtube.com/embed/ElUVNhfgBJo', // lillesand
+        'https://www.youtube.com/embed/llIPYo1v5eo', // inger
+        'https://www.youtube.com/embed/mHVLQjZ0Pxw', // moss
+        'https://www.youtube.com/embed/Oki1eEBPsb0', // michael
+        'https://www.youtube.com/embed/tCsCVD9_ihs', // anders
+        'https://www.youtube.com/embed/nnlBtE0pC5E', // tor
+        'https://www.youtube.com/embed/fD5jQD6Jm-Y', // kari
+      ],
+      correctSolves: 6,
       currentQuestion: 0
     }),
 

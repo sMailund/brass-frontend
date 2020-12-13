@@ -1,5 +1,6 @@
 <template>
   <v-app>
+<!--
     <v-app-bar
       app
       color="blue"
@@ -9,6 +10,7 @@
       <v-spacer></v-spacer>
 
     </v-app-bar>
+-->
 
     <v-content>
       <TaskCard/>
