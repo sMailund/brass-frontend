@@ -61,7 +61,7 @@
     data: () => ({
       answer: "",
       tasks: [],
-      urls: ['https://www.youtube.com/embed/dQw4w9WgXcQ', 'https://www.youtube.com/embed/-e6xOBCAVvA'],
+      urls: ['https://www.youtube.com/embed/dQw4w9WgXcQ', 'https://www.youtube.com/embed/QH2-TGUlwu4', 'https://www.youtube.com/embed/feA64wXhbjo'],
       correctSolves: 10,
       currentQuestion: 0
     }),

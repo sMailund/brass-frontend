@@ -2,20 +2,9 @@
   <v-app>
     <v-app-bar
       app
-      color="black"
+      color="blue"
       dark
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="m_ logo"
-          class="shrink mr-2"
-          contain
-          src="@/assets/logo.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-      </div>
 
       <v-spacer></v-spacer>
 
